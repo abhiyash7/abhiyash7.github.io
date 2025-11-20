@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Abhinav Kumar Srivastava</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -68,12 +69,13 @@
             color: #cccccc;
             text-decoration: none;
             font-size: 0.8rem;
-            transition: color 0.3s ease;
+            transition: color 0.3s ease, transform 0.3s ease;
         }
 
         .nav-links a:hover {
             color: #00ffcc;
             text-shadow: 0 0 4px rgba(0, 255, 204, 0.5);
+            transform: scale(1.05);
         }
 
         /* Hamburger Menu */
@@ -129,7 +131,7 @@
         }
 
         .bg-graphic path, .bg-graphic circle, .bg-graphic rect {
-            transition: transform 0.1s ease-out, opacity 0.3s ease;
+            transition: transform 0.1s ease-out, opacity 0.3s ease, fill 0.3s ease;
         }
 
         /* Main Content */
@@ -210,6 +212,7 @@
         .hero .cta:hover {
             background: #00e6b8;
             box-shadow: 0 0 12px rgba(0, 255, 204, 0.6);
+            transform: scale(1.05);
         }
 
         .about-text {
@@ -220,23 +223,24 @@
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.6rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
             margin-top: 1.6rem;
         }
 
         .skill-card {
-            background: #202020;
+            background: linear-gradient(135deg, #202020, #303030);
             padding: 1.6rem;
-            border-radius: 8px;
-            border: 1px solid rgba(64, 64, 64, 0.3);
+            border-radius: 16px;
+            border: 1px solid rgba(0, 255, 204, 0.2);
             transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .skill-card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-8px);
             border-color: #00ffcc;
-            box-shadow: 0 0 12px rgba(0, 255, 204, 0.15);
+            box-shadow: 0 0 16px rgba(0, 255, 204, 0.3);
         }
 
         .projects-grid {
@@ -246,17 +250,25 @@
         }
 
         .project-card {
-            background: #202020;
+            background: linear-gradient(135deg, #202020, #303030);
             padding: 1.6rem;
-            border-radius: 8px;
-            border: 1px solid rgba(64, 64, 64, 0.3);
+            border-radius: 16px;
+            border: 1px solid rgba(0, 255, 204, 0.2);
             transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 1rem;
         }
 
         .project-card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-8px);
             border-color: #00ffcc;
-            box-shadow: 0 0 12px rgba(0, 255, 204, 0.15);
+            box-shadow: 0 0 16px rgba(0, 255, 204, 0.3);
         }
 
         .project-card .tech {
@@ -271,10 +283,12 @@
             font-size: 0.8rem;
             margin-top: 0.8rem;
             display: inline-block;
+            transition: transform 0.3s ease;
         }
 
         .project-card .link:hover {
             text-shadow: 0 0 4px rgba(0, 255, 204, 0.5);
+            transform: scale(1.05);
         }
 
         .timeline {
@@ -333,11 +347,19 @@
         }
 
         .testimonial-card {
-            background: #202020;
+            background: linear-gradient(135deg, #202020, #303030);
             padding: 1.6rem;
-            border-radius: 8px;
-            border: 1px solid rgba(64, 64, 64, 0.3);
+            border-radius: 16px;
+            border: 1px solid rgba(0, 255, 204, 0.2);
             font-style: italic;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            border-color: #00ffcc;
+            box-shadow: 0 0 16px rgba(0, 255, 204, 0.3);
         }
 
         .testimonial-card .author {
@@ -355,17 +377,18 @@
         }
 
         .blog-card {
-            background: #202020;
+            background: linear-gradient(135deg, #202020, #303030);
             padding: 1.6rem;
-            border-radius: 8px;
-            border: 1px solid rgba(64, 64, 64, 0.3);
+            border-radius: 16px;
+            border: 1px solid rgba(0, 255, 204, 0.2);
             transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .blog-card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-8px);
             border-color: #00ffcc;
-            box-shadow: 0 0 12px rgba(0, 255, 204, 0.15);
+            box-shadow: 0 0 16px rgba(0, 255, 204, 0.3);
         }
 
         .contact-form {
@@ -398,6 +421,13 @@
             color: #cccccc;
             font-family: 'Roboto Mono', monospace;
             font-size: 0.8rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border: 1px solid #00ffcc;
         }
 
         .form-group textarea {
@@ -419,6 +449,7 @@
         button:hover {
             background: #00e6b8;
             box-shadow: 0 0 12px rgba(0, 255, 204, 0.6);
+            transform: scale(1.05);
         }
 
         footer {
@@ -438,12 +469,13 @@
             color: #00ffcc;
             text-decoration: none;
             margin: 0 0.8rem;
-            transition: color 0.3s ease;
+            transition: color 0.3s ease, transform 0.3s ease;
         }
 
         footer .social-links a:hover {
             color: #00e6b8;
             text-shadow: 0 0 4px rgba(0, 255, 204, 0.5);
+            transform: scale(1.05);
         }
 
         @media (max-width: 1024px) {
@@ -480,6 +512,49 @@
             .nav-links a { font-size: 0.72rem; }
             .cta { padding: 0.5rem 1.6rem; }
         }
+
+        /* Projects: dark / monochrome theme for logos */
+.projects-grid .project-card img {
+  width: 100%;
+  height: 140px;            /* uniform height for visual rhythm */
+  object-fit: contain;
+  display: block;
+  margin-bottom: 1rem;
+  filter: grayscale(100%) contrast(0.95) brightness(0.6) saturate(0.6);
+  opacity: 0.95;
+  transition: transform .18s ease, filter .18s ease;
+  background: rgba(10,10,10,0.35); /* gentle dark plate behind logo */
+  padding: 12px; /* breathing room so logos don't touch edges */
+  border-radius: 8px;
+}
+
+/* Slight lift on hover for the card and brighten the logo a bit */
+.project-card:hover img {
+  transform: translateY(-6px) scale(1.02);
+  filter: grayscale(100%) contrast(1.03) brightness(0.78) saturate(0.7);
+}
+
+/* GitHub small dark badge inside link */
+.project-card .github-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: rgba(8,8,8,0.6);
+  padding: .3rem .6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.04);
+  color: #d6fef0;
+  text-decoration: none;
+  font-size: .86rem;
+}
+.project-card .github-badge img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(0.8) contrast(1);
+  margin-right: 4px;
+}
+
     </style>
 </head>
 <body>
@@ -529,97 +604,207 @@
     <div class="container">
         <section id="hero" class="hero">
             <h1>Abhinav Kumar Srivastava</h1>
-            <h2>Web Artisan</h2>
-            <p>Weaving digital experiences with code, design, and data insights</p>
-            <button class="cta">Explore My Work</button>
+            <h2>Crafting Digital Experiences</h2>
+            <p>Exploring the intersection of code, design, and data to create impactful web solutions from Lucknow, India.</p>
+            <button class="cta">Discover My Creations</button>
         </section>
 
         <section id="about">
-            <h2>About Me</h2>
+            <h2>My Journey</h2>
             <p class="about-text">
-                I am a passionate web artisan with a knack for crafting responsive and dynamic digital solutions. With over a year of experience at Codesbizz Information Technology Pvt. Ltd., I’ve honed my skills in frontend development, UI/UX design, and data analysis. My journey also includes exploring backend technologies and optimizing workflows through automation. I thrive on blending creativity with technology to build innovative web platforms that engage and inspire.
+                From my roots in Azamgarh, to pursuing a Master's in Computer Applications at Integral University in Lucknow, my path has been driven by a passion for technology and its potential to make a difference. With a Bachelor's in Statistics from Maharishi University, I bring a data-driven approach to web development.
             </p>
             <p class="about-text" style="margin-top: 1rem;">
-                Beyond coding, I enjoy experimenting with design tools, contributing to data-driven projects, and staying updated with the latest tech trends. My goal is to create seamless, user-focused experiences while continuously evolving in a collaborative environment.
+                Currently leading IT operations at SVAR INDIA, I specialize in building responsive websites, integrating secure systems, and boosting online presence through SEO and SMM. My work at Codesbizz honed my skills in team leadership and UI design. Beyond code, I'm committed to NGO projects that streamline operations and amplify impact.
             </p>
         </section>
 
         <section id="skills">
-            <h2>Skills</h2>
+            <h2>Expertise</h2>
+            <p class="about-text" style="text-align: center; margin-bottom: 2rem;">
+                A blend of technical expertise, analytics capability, and tools that power my projects.
+            </p>
+
             <div class="skills-grid">
                 <div class="skill-card">
-                    <h3>Frontend</h3>
-                    <p>React.js, Next.js, JavaScript, HTML, CSS, Bootstrap</p>
+                    <h3>Technical</h3>
+                    <p>
+                        MERN Stack (MongoDB, Express, React, Node.js), PHP, JavaScript (ES6+), ASP.NET,
+                        MySQL, Tailwind CSS, VPS (NGINX, SSL/TLS), Linux (basic administration).
+                    </p>
                 </div>
+
                 <div class="skill-card">
-                    <h3>UI/UX Design</h3>
-                    <p>Figma, Adobe Photoshop, CorelDRAW</p>
+                    <h3>Analytics</h3>
+                    <p>
+                        MS Excel (Pivot Tables, Power Query, Dashboards), Python (pandas, numpy),
+                        SQL (MySQL, query optimization), data cleaning and reporting.
+                    </p>
                 </div>
-                <div class="skill-card">
-                    <h3>Data Analysis</h3>
-                    <p>MS Excel (Pivot Tables, VLOOKUP, HLOOKUP)</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Backend</h3>
-                    <p>PHP, MySQL</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Testing</h3>
-                    <p>Manual Testing, Test Case Development, Bug Reporting</p>
-                </div>
+
                 <div class="skill-card">
                     <h3>Tools</h3>
-                    <p>Visual Studio, VS Code, Canva, Git, GitHub</p>
+                    <p>
+                        VS Code, Git & GitHub, MySQL Workbench, XAMPP, FileZilla, PyCharm, Postman.
+                    </p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>DevOps & Deployment</h3>
+                    <p>
+                        Docker (basic containers), NGINX reverse-proxy, Certbot/Let's Encrypt for SSL,
+                        deployment on Linux VPS, simple CI/CD concepts.
+                    </p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Cloud & Monitoring</h3>
+                    <p>
+                        Familiarity with deploying to VPS and basic cloud concepts (AWS/GCP fundamentals),
+                        logging & lightweight monitoring (pm2, basic server logs).
+                    </p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Design & Collaboration</h3>
+                    <p>
+                        Figma, Adobe Photoshop, Canva; Agile workflows, issue tracking (GitHub Issues),
+                        client communication & documentation.
+                    </p>
                 </div>
             </div>
         </section>
+
 
         <section id="projects">
-            <h2>Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>Grocery Website</h3>
-                    <p>A responsive platform for managing products and orders with seamless API integration.</p>
-                    <p class="tech">Tech: React.js, Node.js</p>
-                    <a href="#" class="link">View Project</a>
-                </div>
-                <div class="project-card">
-                    <h3>Multi-Level Marketing (MLM) Website</h3>
-                    <p>A dynamic dashboard for tracking user networks, commissions, and growth analytics.</p>
-                    <p class="tech">Tech: PHP, MySQL</p>
-                    <a href="#" class="link">View Project</a>
-                </div>
-                <div class="project-card">
-                    <h3>IT Company Website</h3>
-                    <p>A corporate site with server-side rendering for enhanced performance and SEO.</p>
-                    <p class="tech">Tech: React.js, Next.js</p>
-                    <a href="#" class="link">View Project</a>
-                </div>
-                <div class="project-card">
-                    <h3>Car Rental Website</h3>
-                    <p>A fully functional platform with secure authentication and real-time booking management.</p>
-                    <p class="tech">Tech: PHP, MySQL</p>
-                    <a href="#" class="link">View Project</a>
-                </div>
-            </div>
-        </section>
+  <h2>Featured Works</h2>
+  <p class="about-text" style="text-align: center; margin-bottom: 2rem;">
+    A showcase of innovative projects that blend technology with real-world impact.
+  </p>
+
+  <div class="projects-list" style="display:flex;flex-direction:column;gap:1.25rem;">
+    <!-- Row 1: Outshine (image left) -->
+    <article class="project-row" style="display:flex;gap:1.5rem;align-items:center;padding:1.2rem;border-radius:12px;background:linear-gradient(180deg,#101010,#161616);border:1px solid rgba(0,255,204,0.05);">
+      <img src="https://outshineglobalservices.com/logo1.png" alt="Outshine Global Services Logo" loading="lazy" style="flex:0 0 320px;width:320px;height:160px;object-fit:contain;background:rgba(10,10,10,0);padding:12px;border-radius:8px;filter:grayscale(100%) contrast(.95) brightness(.6);">
+      <div class="project-content" style="flex:1;">
+        <h3>Outshine Global Website</h3>
+        <p style="margin:.4rem 0;"><strong>Live:</strong> <a href="https://outshineglobalservices.com" class="link" target="_blank" rel="noopener noreferrer">outshineglobalservices.com</a></p>
+        <p style="margin:.45rem 0;">• Built a fully responsive MERN Stack job-portal platform with secure authentication, real-time vacancy & candidate CRUD operations, and a Tailwind-styled admin dashboard for managing recruitment workflows.</p>
+        <p style="margin:.45rem 0;">• Deployed and optimized the website on a VPS server with NGINX + SSL, ensuring high performance, uptime, and secure access.</p>
+        <p class="tech" style="margin-top:.6rem;">Tech: MERN Stack, Tailwind CSS, VPS (NGINX + SSL)</p>
+        <div style="margin-top:.6rem;">
+          <a href="https://outshineglobalservices.com" class="link" target="_blank" rel="noopener noreferrer">Explore Live</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Row 2: Yajat (image right - reverse) -->
+    <article class="project-row reverse" style="display:flex;gap:1.5rem;align-items:center;padding:1.2rem;border-radius:12px;background:linear-gradient(180deg,#101010,#161616);border:1px solid rgba(0,255,204,0.05);flex-direction:row-reverse;">
+      <img src="https://yajatfoundation.org/img/yajat-logo.png" alt="Yajat Foundation Logo" loading="lazy" style="flex:0 0 320px;width:320px;height:160px;object-fit:contain;background:rgba(10,10,10,0);padding:12px;border-radius:8px;filter:grayscale(100%) contrast(.95) brightness(.6);">
+      <div class="project-content" style="flex:1;">
+        <h3>Yajat Foundation</h3>
+        <p style="margin:.4rem 0;"><strong>Live:</strong> <a href="https://yajatfoundation.org" class="link" target="_blank" rel="noopener noreferrer">yajatfoundation.org</a></p>
+        <p style="margin:.45rem 0;">• Designed and developed a responsive, content-rich official NGO website showcasing programs, events, and impact stories.</p>
+        <p style="margin:.45rem 0;">• Integrated custom PHP and JavaScript features for interactive galleries and optimized content flows to highlight community outreach.</p>
+        <p class="tech" style="margin-top:.6rem;">Tech: PHP, JavaScript, Tailwind CSS</p>
+        <div style="margin-top:.6rem;">
+          <a href="https://yajatfoundation.org" class="link" target="_blank" rel="noopener noreferrer">Explore Live</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Row 3: Social Being (image left) -->
+    <article class="project-row" style="display:flex;gap:1.5rem;align-items:center;padding:1.2rem;border-radius:12px;background:linear-gradient(180deg,#101010,#161616);border:1px solid rgba(0,255,204,0.05);">
+      <img src="https://socialbeingfoundation.org/logo.png" alt="Social Being Foundation Logo" loading="lazy" style="flex:0 0 320px;width:320px;height:160px;object-fit:contain;background:rgba(10,10,10,0);padding:12px;border-radius:8px;filter:grayscale(100%) contrast(.95) brightness(.6);">
+      <div class="project-content" style="flex:1;">
+        <h3>Social Being Foundation</h3>
+        <p style="margin:.4rem 0;"><strong>Live:</strong> <a href="https://socialbeingfoundation.org" class="link" target="_blank" rel="noopener noreferrer">socialbeingfoundation.org</a></p>
+        <p style="margin:.45rem 0;">• Developed a user-friendly site with optimized flows and galleries to amplify the NGO’s mission and encourage donations.</p>
+        <p style="margin:.45rem 0;">• Focused on visual storytelling and accessible content structure to improve engagement and conversions.</p>
+        <p class="tech" style="margin-top:.6rem;">Tech: PHP, JavaScript, Tailwind CSS</p>
+        <div style="margin-top:.6rem;">
+          <a href="https://socialbeingfoundation.org" class="link" target="_blank" rel="noopener noreferrer">Explore Live</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Row 4: Automated Receipt (GitHub; image right - reverse) -->
+    <article class="project-row reverse" style="display:flex;gap:1.5rem;align-items:center;padding:1.2rem;border-radius:12px;background:linear-gradient(180deg,#101010,#161616);border:1px solid rgba(0,255,204,0.05);flex-direction:row-reverse;">
+      <!-- darker small github badge as image -->
+      <div style="flex:0 0 320px;width:320px;height:160px;display:flex;align-items:center;justify-content:center;background:rgba(10,10,10,0);padding:12px;border-radius:8px;">
+        <!-- inline monochrome GitHub mark (dark themed) -->
+        <svg width="120" height="120" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="16" height="16" rx="6" fill="#0b0b0b"/>
+          <path d="M8 0.5C3.58 0.5 0 4.08 0 8.5c0 3.54 2.29 6.54 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.58.82-2.14-.08-.2-.36-1.02.08-2.13 0 0 .67-.22 2.2.82a7.6 7.6 0 012 0c1.53-1.04 2.2-.82 2.2-.82.44 1.11.16 1.93.08 2.13.51.56.82 1.27.82 2.14 0 3.07-1.87 3.75-3.65 3.95.28.25.53.73.53 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8.5C16 4.08 12.42.5 8 .5z" fill="#cfeee6"/>
+        </svg>
+      </div>
+
+      <div class="project-content" style="flex:1;">
+        <h3>Automated Receipt Generator (Excel Project)</h3>
+        <p style="margin:.4rem 0;"><strong>GitHub Link:</strong>
+          <a href="https://github.com/abhiyash7/MS-Excel-Project.git" class="github-badge" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:.5rem;padding:.28rem .6rem;border-radius:999px;background:rgba(8,8,8,0.6);border:1px solid rgba(255,255,255,0);color:#d6fef0;text-decoration:none;">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8 0.5C3.58 0.5 0 4.08 0 8.5c0 3.54 2.29 6.54 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.58.82-2.14-.08-.2-.36-1.02.08-2.13 0 0 .67-.22 2.2.82a7.6 7.6 0 012 0c1.53-1.04 2.2-.82 2.2-.82.44 1.11.16 1.93.08 2.13.51.56.82 1.27.82 2.14 0 3.07-1.87 3.75-3.65 3.95.28.25.53.73.53 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8.5C16 4.08 12.42.5 8 .5z" fill="#cfeee6"/></svg>
+            View on GitHub
+          </a>
+        </p>
+        <p style="margin:.45rem 0;">• Built a multi-sheet Excel system to auto-generate donation receipts using macros and lookup functions for dynamic filtering.</p>
+        <p style="margin:.45rem 0;">• Automated data entry, validation, and report generation across donor/program records, streamlining NGO operations.</p>
+        <p class="tech" style="margin-top:.6rem;">Tech: Excel Macros, Power Query, XLOOKUP, VLOOKUP, Slicers, Pivot Tables</p>
+        <div style="margin-top:.6rem;">
+          <a href="https://github.com/abhiyash7/MS-Excel-Project.git" class="link" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Row 5: Beneficiary Tracking (image left) -->
+    <article class="project-row" style="display:flex;gap:1.5rem;align-items:center;padding:1.2rem;border-radius:12px;background:linear-gradient(180deg,#101010,#161616);border:1px solid rgba(0,255,204,0.05);">
+      <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="NGO Tracking - GitHub" loading="lazy" style="flex:0 0 320px;width:320px;height:160px;object-fit:contain;background:rgba(10,10,10,0);padding:12px;border-radius:8px;filter:grayscale(100%) contrast(.95) brightness(.6);">
+      <div class="project-content" style="flex:1;">
+        <h3>NGO Beneficiary Tracking System</h3>
+        <p style="margin:.4rem 0;"><strong>Github Link:</strong>
+          <a href="https://github.com/abhiyash7/NGO-Beneficiary-Tracking-System.git" class="github-badge" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:.5rem;padding:.28rem .6rem;border-radius:999px;background:rgba(8,8,8,0.6);border:1px solid rgba(255,255,255,0.03);color:#d6fef0;text-decoration:none;">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8 0.5C3.58 0.5 0 4.08 0 8.5c0 3.54 2.29 6.54 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.58.82-2.14-.08-.2-.36-1.02.08-2.13 0 0 .67-.22 2.2.82a7.6 7.6 0 012 0c1.53-1.04 2.2-.82 2.2-.82.44 1.11.16 1.93.08 2.13.51.56.82 1.27.82 2.14 0 3.07-1.87 3.75-3.65 3.95.28.25.53.73.53 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8.5C16 4.08 12.42.5 8 .5z" fill="#cfeee6"/></svg>
+            View on GitHub
+          </a>
+        </p>
+        <p style="margin:.45rem 0;">• Designed a normalized SQL database to manage 500+ beneficiaries, donations, and impact reports for NGO programs.</p>
+        <p style="margin:.45rem 0;">• Built Excel dashboards using Power Query and Pivot Tables to visualize program reach, donation trends, and beneficiary impact.</p>
+        <p class="tech" style="margin-top:.6rem;">Tech: MySQL, Excel, Python, Power Query</p>
+        <div style="margin-top:.6rem;">
+          <a href="https://github.com/abhiyash7/NGO-Beneficiary-Tracking-System.git" class="link" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <!-- Responsive stack behavior -->
+  <style>
+    @media (max-width: 900px) {
+      .project-row, .project-row.reverse { flex-direction: column !important; }
+      .project-row img, .project-row > div[style] { width: 100% !important; flex: none !important; height: 160px !important; }
+    }
+  </style>
+</section>
+
+
 
         <section id="experience">
-            <h2>Experience</h2>
+            <h2>Professional Path</h2>
+            <p class="about-text" style="text-align: center; margin-bottom: 2rem;">Milestones in my career shaping innovative digital solutions.</p>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>Web Developer @ Codesbizz IT Pvt. Ltd.</h3>
-                        <p>April 2024 - October 2024</p>
-                        <p>Developed responsive web apps with React.js and PHP, led team coding practices, and designed UI with Figma.</p>
+                        <h3>Web Developer & IT Manager at SVAR INDIA</h3>
+                        <p>February 2025 - Present | Lucknow, India</p>
+                        <p>Orchestrating IT strategies, developing optimized websites, and enhancing digital outreach for meaningful NGO impacts.</p>
                     </div>
                     <div class="timeline-dot"></div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>Data Analyst @ StudyPlank</h3>
-                        <p>February 2022 - April 2022</p>
-                        <p>Analyzed user metrics with Excel, generated reports, and automated tasks for efficiency.</p>
+                        <h3>Web Developer at Codesbizz IT Pvt. Ltd.</h3>
+                        <p>April 2024 - February 2025 | Lucknow, India</p>
+                        <p>Collaborated on responsive apps, led coding standards, and designed intuitive UIs to elevate user experiences.</p>
                     </div>
                     <div class="timeline-dot"></div>
                 </div>
@@ -627,42 +812,42 @@
         </section>
 
         <section id="testimonials">
-            <h2>Testimonials</h2>
+            <h2>Voices of Collaboration</h2>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
-                    <p>"Abhinav’s web solutions transformed our workflow with stunning designs and performance."</p>
-                    <p class="author">- Team Lead, Codesbizz IT Pvt. Ltd.</p>
+                    <p>"Abhinav's innovative web solutions have transformed our digital presence, making our outreach more effective."</p>
+                    <p class="author">- Partner at SVAR INDIA</p>
                 </div>
                 <div class="testimonial-card">
-                    <p>"His data insights were key to improving our user engagement strategies."</p>
-                    <p class="author">- Manager, StudyPlank</p>
+                    <p>"His technical expertise and leadership have been key in delivering high-performance applications."</p>
+                    <p class="author">- Colleague at Codesbizz</p>
                 </div>
             </div>
         </section>
 
         <section id="blog">
-            <h2>Blog</h2>
+            <h2>Insights & Thoughts</h2>
             <div class="blog-grid">
                 <div class="blog-card">
-                    <h3>Mastering Responsive Design</h3>
-                    <p>Exploring techniques for creating adaptable web interfaces.</p>
+                    <h3>Empowering NGOs Through Tech</h3>
+                    <p>Exploring how custom web tools can amplify non-profit missions and operations.</p>
                     <a href="#" class="link">Read More</a>
                 </div>
                 <div class="blog-card">
-                    <h3>Data-Driven Web Development</h3>
-                    <p>How to leverage analytics for better user experiences.</p>
+                    <h3>Data Automation for Efficiency</h3>
+                    <p>Leveraging Excel and Python to streamline workflows in charitable organizations.</p>
                     <a href="#" class="link">Read More</a>
                 </div>
                 <div class="blog-card">
-                    <h3>UI/UX Trends 2025</h3>
-                    <p>A look at the future of user interface design.</p>
+                    <h3>Future of Responsive Design</h3>
+                    <p>Trends in creating seamless user experiences across devices.</p>
                     <a href="#" class="link">Read More</a>
                 </div>
             </div>
         </section>
 
         <section id="contact">
-            <h2>Contact</h2>
+            <h2>Connect With Me</h2>
             <form class="contact-form">
                 <div class="form-group">
                     <label for="name">Name</label>
@@ -676,18 +861,18 @@
                     <label for="message">Message</label>
                     <textarea id="message" required></textarea>
                 </div>
-                <button type="submit">Send Transmission</button>
+                <button type="submit">Send Message</button>
             </form>
         </section>
 
         <!-- Footer -->
         <footer>
-            <p>© 2025 Abhinav Kumar Srivastava. All rights reserved.</p>
+            <p>© 2025 Abhinav Kumar Srivastava. Crafting the future from Lucknow, India.</p>
             <div class="social-links">
-                <a href="mailto:abhivash234@gmail.com">Email</a>
+                <a href="mailto:abhiyash234@gmail.com">Email</a>
                 <a href="tel:+917272863020">Phone</a>
-                <a href="https://github.com/abhivash7">GitHub</a>
-                <a href="https://linkedin.com/in/abhivash7">LinkedIn</a>
+                <a href="https://github.com/abhiyash7">GitHub</a>
+                <a href="https://linkedin.com/in/abhiyash7">LinkedIn</a>
             </div>
         </footer>
     </div>
