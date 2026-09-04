@@ -20,7 +20,7 @@
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
 <script src="https://unpkg.com/split-type@0.3.4/umd/index.min.js"></script>
 <script src="https://unpkg.com/lenis@1.3.26/dist/lenis.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.185.1/build/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
 <style>
 :root{
@@ -358,6 +358,19 @@ section{position:relative}
 <body class="loading">
 <div id="ambient-scanner" aria-hidden="true"></div>
 <div class="preloader" aria-hidden="true"><div class="preloader__inner"><div class="preloader__meta"><span>ABHINAV / SYSTEM 02</span><span id="loadNum">00%</span></div><div class="preloader__bar"><div class="preloader__fill" id="loadFill"></div></div><div class="preloader__word">BUILD<span>.</span>TEST<span>.</span>SHIP<span>.</span></div></div></div>
+<script>
+// Guaranteed Failsafe: Ensures page NEVER freezes on preloader regardless of CDN or network latency
+setTimeout(function(){
+  var p=document.querySelector('.preloader');
+  if(p){
+    p.style.transition='opacity 0.6s ease';
+    p.style.opacity='0';
+    p.style.pointerEvents='none';
+    setTimeout(function(){try{p.remove();}catch(e){p.style.display='none';}},600);
+  }
+  document.body.classList.remove('loading');
+},1800);
+</script>
 <div id="noise"></div>
 <div class="cursor-dot"></div><div class="cursor-ring"></div><div class="cursor-label">VIEW</div>
 <canvas id="webgl"></canvas>
@@ -670,4 +683,481 @@ section{position:relative}
       </article>
 
     </div></div>
-   
+    <div class="container"><div class="architecture reveal"><div class="architecture__top"><span>PROJECT ANATOMY / REUSABLE SYSTEM</span><span>INPUT → BUILD → VERIFY → RELEASE</span></div><div class="arch-grid"><div class="arch-node"><small>01</small><b>Requirements</b></div><div class="arch-node"><small>02</small><b>UI / API</b></div><div class="arch-node"><small>03</small><b>Database</b></div><div class="arch-node"><small>04</small><b>Implementation</b></div><div class="arch-node"><small>05</small><b>ST / SIT / UAT</b></div><div class="arch-node"><small>06</small><b>Deploy</b></div></div></div></div>
+  </section>
+
+  <section id="experience" class="section experience">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <div class="kicker reveal">04 / EXPERIENCE & TRAJECTORY</div>
+          <h2 class="reveal" style="margin-top:18px">THE<br><em>PATH.</em></h2>
+        </div>
+        <p class="reveal-x">Progressing from full-stack software development into hands-on <strong>IT operations, platform architecture, manual & API testing, and production release delivery</strong>.</p>
+      </div>
+
+      <!-- Experience Timeline -->
+      <div class="exp-timeline">
+        <div class="exp-spine" aria-hidden="true"></div>
+
+        <!-- Role 1: IT Head @ SVAR INDIA -->
+        <div class="exp-entry reveal">
+          <div class="exp-marker">
+            <span class="exp-beacon"></span>
+            <span class="exp-pulse"></span>
+          </div>
+          <div class="exp-card active-role">
+            <div class="exp-card__header">
+              <div class="exp-badge active">
+                <span class="beacon-dot"></span>
+                <span>PRESENT / ACTIVE ROLE</span>
+              </div>
+              <div class="exp-time">
+                <span class="exp-date">FEB 2025 — PRESENT</span>
+                <span class="exp-duration">1+ YRS</span>
+              </div>
+            </div>
+
+            <div class="exp-title-row">
+              <div>
+                <h3 class="exp-role-title">IT Head</h3>
+                <div class="exp-company">
+                  <a href="https://svarindia.org" target="_blank" rel="noopener" class="exp-company__link" data-cursor="VISIT">
+                    SVAR INDIA
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                  </a>
+                  <span class="exp-sep">·</span>
+                  <span class="exp-loc">Lucknow, India</span>
+                  <span class="exp-sep">·</span>
+                  <span class="exp-type">Full-Time</span>
+                </div>
+              </div>
+              <div class="exp-org-badge">IT OPERATIONS & PLATFORM</div>
+            </div>
+
+            <div class="exp-points">
+              <div class="exp-point">
+                <div class="exp-point__icon"></div>
+                <div class="exp-point__body">
+                  <strong>Infrastructure & IT Operations</strong>
+                  <p>Direct organizational IT ecosystem: web development, server hosting, DNS routing, domain portfolio, and SSL encryption for bulletproof digital uptime.</p>
+                </div>
+              </div>
+              <div class="exp-point">
+                <div class="exp-point__icon"></div>
+                <div class="exp-point__body">
+                  <strong>Outshine Global Services Platform & CRM</strong>
+                  <p>Delivered dedicated recruitment platform development, candidate workflow engines, CRUD administrative portals, and seamless internal CRM integrations.</p>
+                </div>
+              </div>
+              <div class="exp-point">
+                <div class="exp-point__icon"></div>
+                <div class="exp-point__body">
+                  <strong>ST / SIT / UAT Testing & Release Validation</strong>
+                  <p>Execute manual testing across functional workflows, smoke & regression testing passes, Postman API validation, defect logging, and production release sign-off.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="exp-tags">
+              <span class="tag">IT Operations</span>
+              <span class="tag">Web Architecture</span>
+              <span class="tag">DNS & SSL</span>
+              <span class="tag">CRM Integration</span>
+              <span class="tag">ST / SIT / UAT</span>
+              <span class="tag">Postman API</span>
+              <span class="tag">Production Support</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Role 2: Web Developer @ Codesbizz -->
+        <div class="exp-entry reveal">
+          <div class="exp-marker">
+            <span class="exp-node"></span>
+          </div>
+          <div class="exp-card">
+            <div class="exp-card__header">
+              <div class="exp-badge">
+                <span>COMPLETED TENURE</span>
+              </div>
+              <div class="exp-time">
+                <span class="exp-date">APR 2024 — FEB 2025</span>
+                <span class="exp-duration">11 MOS</span>
+              </div>
+            </div>
+
+            <div class="exp-title-row">
+              <div>
+                <h3 class="exp-role-title">Web Developer</h3>
+                <div class="exp-company">
+                  <span class="exp-company__name">Codesbizz Information Technology Pvt. Ltd.</span>
+                  <span class="exp-sep">·</span>
+                  <span class="exp-loc">Lucknow, India</span>
+                  <span class="exp-sep">·</span>
+                  <span class="exp-type">Full-Time</span>
+                </div>
+              </div>
+              <div class="exp-org-badge">SOFTWARE & QA</div>
+            </div>
+
+            <div class="exp-points">
+              <div class="exp-point">
+                <div class="exp-point__icon"></div>
+                <div class="exp-point__body">
+                  <strong>Database-Driven Application Engineering</strong>
+                  <p>Engineered responsive, dynamic web applications with PHP, MySQL, and React.js; built custom UI features and robust database structures.</p>
+                </div>
+              </div>
+              <div class="exp-point">
+                <div class="exp-point__icon"></div>
+                <div class="exp-point__body">
+                  <strong>Rigorous API & Defect Tracking Cycles</strong>
+                  <p>Authored functional and regression test suites, validated REST services in Postman, documented bug lifecycles, and verified fixes with engineering teams.</p>
+                </div>
+              </div>
+              <div class="exp-point">
+                <div class="exp-point__icon"></div>
+                <div class="exp-point__body">
+                  <strong>Performance & Cross-Functional Delivery</strong>
+                  <p>Enhanced web vitals and query efficiencies while collaborating across design, frontend, and client stakeholders for prompt milestone delivery.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="exp-tags">
+              <span class="tag">PHP</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">React.js</span>
+              <span class="tag">REST APIs</span>
+              <span class="tag">Postman</span>
+              <span class="tag">Defect Tracking</span>
+              <span class="tag">Regression QA</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Academic Foundation & Certifications -->
+      <div class="exp-education reveal">
+        <div class="exp-edu-header">
+          <div class="kicker">ACADEMIC & PROFESSIONAL CREDENTIALS</div>
+          <span class="edu-caption">STATISTICAL ANALYSIS & COMPUTER APPLICATIONS FOUNDATION</span>
+        </div>
+        <div class="edu-grid">
+          <div class="edu-card">
+            <div class="edu-year">2021 — 2023</div>
+            <h4 class="edu-degree">Master of Computer Application (MCA)</h4>
+            <div class="edu-inst">Integral University · Lucknow</div>
+            <p class="edu-desc">Advanced computing, software engineering, database design, enterprise systems, and algorithmic problem-solving.</p>
+            <div class="edu-tag">POST-GRADUATE DEGREE</div>
+          </div>
+          <div class="edu-card">
+            <div class="edu-year">2018 — 2021</div>
+            <h4 class="edu-degree">Bachelor of Science in Statistics (B.Sc)</h4>
+            <div class="edu-inst">Maharishi University of IT · Lucknow</div>
+            <p class="edu-desc">Statistical modeling, quantitative research, data distributions, and probability theory providing deep foundations for QA & data analysis.</p>
+            <div class="edu-tag">UNDERGRADUATE DEGREE</div>
+          </div>
+          <div class="edu-card">
+            <div class="edu-year">FEB 2024</div>
+            <h4 class="edu-degree">SQL & .NET Training Certification</h4>
+            <div class="edu-inst">Bringing Archer Technologies</div>
+            <p class="edu-desc">Relational database engineering, stored procedures, query optimization, and .NET Core backend architecture.</p>
+            <div class="edu-tag">INDUSTRY CERTIFICATION</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="quality" class="section">
+    <div class="container qa-wrap">
+      <div><div class="kicker reveal">05 / QUALITY</div><div class="qa__big reveal" style="margin-top:28px">BUILD.<br><span>BREAK.</span><br>PROVE.</div><p class="qa__intro reveal">Quality is a first-class engineering concern — hands-on across manual testing, API validation, ST/SIT/UAT regression cycles, defect tracking, and release sign-off on production systems.</p></div>
+      <div class="qa-panels">
+        <article class="qa-panel reveal"><h3>Test Design</h3><p>Design coverage around scenarios, test cases and business workflows before a release is considered complete.</p><div class="qa-tags"><span class="tag">Test Scenarios</span><span class="tag">Test Cases</span><span class="tag">Functional</span></div></article>
+        <article class="qa-panel reveal"><h3>API Validation</h3><p>Use Postman and REST API knowledge to validate services beyond the UI and catch workflow-level defects.</p><div class="qa-tags"><span class="tag">REST</span><span class="tag">Postman</span><span class="tag">API Testing</span></div></article>
+        <article class="qa-panel reveal"><h3>Release Confidence</h3><p>Regression and smoke passes help verify that new changes have not broken existing business behavior.</p><div class="qa-tags"><span class="tag">Regression</span><span class="tag">Smoke</span><span class="tag">Retesting</span></div></article>
+        <article class="qa-panel reveal"><h3>Defect Lifecycle</h3><p>Identify defects, report them clearly, collaborate on fixes and verify corrected behavior before deployment.</p><div class="qa-tags"><span class="tag">Bug Reporting</span><span class="tag">Tracking</span><span class="tag">Fix Verification</span></div></article>
+        <article class="qa-panel reveal"><h3>Pega / Case Systems</h3><p>Translate application behavior into case lifecycle and platform-level analysis with Clipboard, Tracer and Report Definition knowledge.</p><div class="qa-tags"><span class="tag">Pega</span><span class="tag">Clipboard</span><span class="tag">Tracer</span></div></article>
+        <article class="qa-panel reveal"><h3>Jira / Delivery</h3><p>Keep issues, ownership and workflow state visible so development and QA move through the same feedback loop.</p><div class="qa-tags"><span class="tag">Jira</span><span class="tag">Workflow</span><span class="tag">Collaboration</span></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section data-section section--tight">
+    <div class="container"><div class="section__head"><div><div class="kicker reveal">06 / DATA LAYER</div><h2 class="reveal" style="margin-top:18px">DATA<br><em>BEHIND THE UI.</em></h2></div><p class="reveal-x">A statistics foundation plus SQL, Excel and Python gives the portfolio another dimension: <strong>not just displaying information, but understanding the data underneath it.</strong> </p></div>
+      <div class="data-stage reveal">
+        <div class="data-glow"></div><div class="data-grid-bg"></div>
+
+        <!-- Card 1: SQL -->
+        <div class="data-card one">
+          <h3>SQL Layer</h3><p>Relational queries for reporting and QA validation workflows.</p>
+          <div class="metric">SQL <span>SERVER</span></div>
+          <div class="data-status"><span class="data-status-dot"></span>CONNECTED</div>
+          <div class="query"><b>SELECT</b> feature, status<br><b>FROM</b> release_checks<br><b>WHERE</b> verified = 1<br><b>ORDER BY</b> priority DESC;</div>
+        </div>
+
+        <!-- Card 2: Excel -->
+        <div class="data-card two">
+          <h3>Excel &amp; Power Query</h3><p>Operational analysis with formulas, pivots and automation.</p>
+          <div class="metric">XLOOKUP <span>+ VBA</span></div>
+          <div class="mini-chart"><i style="--h:38%"></i><i style="--h:57%"></i><i style="--h:48%"></i><i style="--h:79%"></i><i style="--h:66%"></i><i style="--h:91%"></i><i style="--h:74%"></i><i style="--h:83%"></i></div>
+          <div class="metric-sub">Pivot · Power Query · VLOOKUP · Macros</div>
+        </div>
+
+        <!-- Card 3: Python -->
+        <div class="data-card three">
+          <h3>Python / Pandas</h3><p>Transform, inspect and reason about structured data programmatically.</p>
+          <div class="data-pipeline">
+            <span class="pipe-step">RAW</span><span class="pipe-arrow">→</span>
+            <span class="pipe-step">CLEAN</span><span class="pipe-arrow">→</span>
+            <span class="pipe-step">ANALYSE</span><span class="pipe-arrow">→</span>
+            <span class="pipe-step">REPORT</span>
+          </div>
+          <div class="query">df.dropna().reset_index()<br>df.groupby('status').agg({'count'})<br>df.sort_values('priority')</div>
+        </div>
+
+        <!-- Card 4: Stats -->
+        <div class="data-card four">
+          <h3>Statistics Foundation</h3><p>BSc Statistics — carried into engineering and data decisions.</p>
+          <div class="metric">BSc <span>/ STAT</span></div>
+          <div class="metric-sub">Inference · Probability · Modelling</div>
+          <div class="query">signal → pattern<br>pattern → insight<br>insight → decision</div>
+        </div>
+
+        <!-- Card 5: Infra center -->
+        <div class="data-card five">
+          <h3>Data Infrastructure</h3><p>End-to-end from schema to deploy — databases, servers and pipelines.</p>
+          <div class="data-pipeline">
+            <span class="pipe-step">SCHEMA</span><span class="pipe-arrow">→</span>
+            <span class="pipe-step">QUERY</span><span class="pipe-arrow">→</span>
+            <span class="pipe-step">CACHE</span>
+          </div>
+          <div class="metric-sub">SQL Server · MySQL · SSMS · NGINX</div>
+          <div class="data-status" style="margin-top:14px"><span class="data-status-dot"></span>ALL SYSTEMS OPERATIONAL</div>
+        </div>
+
+        <!-- Card 6: Insights -->
+        <div class="data-card six">
+          <h3>Reporting &amp; Insights</h3><p>Turning raw data into decisions with dashboards and structured outputs.</p>
+          <div class="mini-chart"><i style="--h:45%"></i><i style="--h:62%"></i><i style="--h:38%"></i><i style="--h:88%"></i><i style="--h:71%"></i><i style="--h:55%"></i><i style="--h:94%"></i><i style="--h:78%"></i></div>
+          <div class="metric-sub">Pivot Tables · Power BI · Charts · Exports</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section ai-section section--bottom">
+    <div class="container"><div class="ai-board reveal">
+      <div class="ai-main"><div class="kicker">07 / CURRENT WORKFLOW</div><h3 style="margin-top:30px">ENGINEER<br>WITH <span>AI.</span></h3><p>AI-assisted development is part of the current toolkit — Claude Code, GitHub Copilot, Cursor and Antigravity IDE — used alongside normal engineering judgment, code review and validation. </p><div class="ai-orbit"><div class="ai-dot"></div></div></div>
+      <div class="ai-list"><div class="ai-row"><b>Explore</b><span>Understand<br>Unknowns</span></div><div class="ai-row"><b>Generate</b><span>Draft<br>Implementation</span></div><div class="ai-row"><b>Review</b><span>Reason<br>About Code</span></div><div class="ai-row"><b>Test</b><span>Verify<br>Behavior</span></div></div>
+    </div></div>
+  </section>
+
+  <section id="contact" class="contact section--bottom">
+    <div class="container contact__layout">
+      <div><div class="kicker reveal">08 / CONTACT</div><h2 class="reveal" style="margin-top:32px">LET'S<br>BUILD<span>.</span></h2><p class="contact__copy reveal">Open to software engineering, web development and QA-focused opportunities where building and validating real products matter.</p><div class="contact__links reveal"><a class="btn primary magnetic" data-cursor="MAIL" href="mailto:abhiyash234@gmail.com">Email Me ↗</a><a class="btn magnetic" data-cursor="CV" href="Abhinav_CV 04-09-2026.pdf" download="Abhinav_Kumar_Srivastava_CV.pdf">Download CV ↓</a></div></div>
+      <aside class="contact__card reveal-x"><div class="contact__item"><label>Email</label><a href="mailto:abhiyash234@gmail.com">abhiyash234@gmail.com</a></div><div class="contact__item"><label>Phone</label><a href="tel:+917272863020">+91 7272863020</a></div><div class="contact__item"><label>LinkedIn</label><a href="https://linkedin.com/in/abhiyash7" target="_blank" rel="noopener">linkedin.com/in/abhiyash7 ↗</a></div><div class="contact__item"><label>GitHub</label><a href="https://github.com/abhiyash7" target="_blank" rel="noopener">github.com/abhiyash7 ↗</a></div><div class="contact__item"><label>Based in</label><a href="#">Lucknow, Uttar Pradesh</a></div></aside>
+    </div>
+  </section>
+</main>
+
+<footer class="footer"><div class="container footer__inner"><p>© <span id="year"></span> ABHINAV KUMAR SRIVASTAVA · BUILT WITH WEBGL / GSAP / LENIS</p><div class="footer__links"><a href="#about">About</a><a href="#work">Work</a><a href="#quality">QA</a><a href="#contact">Contact</a><a href="Abhinav_CV 04-09-2026.pdf" download="Abhinav_Kumar_Srivastava_CV.pdf" style="color:var(--accent)">CV ↓</a></div></div></footer>
+
+<script>
+(() => {
+  'use strict';
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const touch = matchMedia('(pointer: coarse)').matches;
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // ---------- Loading ----------
+  const pre = document.querySelector('.preloader');
+  const fill = document.getElementById('loadFill');
+  const num = document.getElementById('loadNum');
+  let loadProgress = 0;
+  const loadTimer = setInterval(() => {
+    loadProgress = Math.min(loadProgress + Math.round(Math.random()*13)+3, 94);
+    fill.style.width = loadProgress + '%';
+    num.textContent = String(loadProgress).padStart(2,'0') + '%';
+  }, 70);
+
+  // ---------- Lenis + GSAP ----------
+  gsap.registerPlugin(ScrollTrigger);
+  let lenis = null;
+  if (!reduced) {
+    lenis = new Lenis({ duration: 1.15, smoothWheel: true, syncTouch: false, autoRaf: false });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(t => lenis.raf(t * 1000));
+    gsap.ticker.lagSmoothing(0);
+  }
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      if (lenis) lenis.scrollTo(target, { offset: -40 }); else target.scrollIntoView({behavior:'smooth'});
+    });
+  });
+
+  // ---------- Cursor ----------
+  const dot = document.querySelector('.cursor-dot');
+  const ring = document.querySelector('.cursor-ring');
+  const label = document.querySelector('.cursor-label');
+  let mx=0,my=0,rx=0,ry=0, lx=0,ly=0;
+  if (!touch && !reduced) {
+    addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; dot.style.left=mx+'px'; dot.style.top=my+'px'; });
+    gsap.ticker.add(() => {
+      rx += (mx-rx)*.14; ry += (my-ry)*.14;
+      lx += (mx-lx)*.08; ly += (my-ly)*.08;
+      ring.style.left=rx+'px'; ring.style.top=ry+'px'; label.style.left=lx+'px'; label.style.top=ly+'px';
+    });
+    document.querySelectorAll('.magnetic').forEach(el => {
+      el.addEventListener('mouseenter', () => { ring.classList.add('is-hover'); label.textContent = el.dataset.cursor || 'VIEW'; });
+      el.addEventListener('mouseleave', () => { ring.classList.remove('is-hover'); label.textContent='VIEW'; gsap.to(el,{x:0,y:0,duration:.45,ease:'elastic.out(1,.35)'}); });
+      el.addEventListener('mousemove', e => {
+        const r=el.getBoundingClientRect(), dx=(e.clientX-(r.left+r.width/2))*0.18, dy=(e.clientY-(r.top+r.height/2))*0.18;
+        gsap.to(el,{x:dx,y:dy,duration:.35,ease:'power3.out',overwrite:true});
+      });
+    });
+  }
+
+  // ---------- Split-type text ----------
+  if (!reduced && window.SplitType) {
+    document.querySelectorAll('.split').forEach(el => new SplitType(el, {types:'chars,words'}));
+  }
+
+  // ---------- Three.js world ----------
+  let renderer=null, scene=null, camera=null, world=null, particles=null, particleGeo=null, wire=null, rings=[], mouseX=0,mouseY=0;
+  const canvas = document.getElementById('webgl');
+  function makeWebGL(){
+    if (!window.THREE) return;
+    const mobile = innerWidth < 700;
+    renderer = new THREE.WebGLRenderer({canvas, antialias:!mobile, alpha:true, powerPreference:'high-performance'});
+    renderer.setPixelRatio(Math.min(devicePixelRatio, mobile ? 1 : 1.65));
+    renderer.setSize(innerWidth, innerHeight, false);
+    renderer.setClearColor(0x000000,0);
+    scene = new THREE.Scene();
+    camera = new THREE.PerspectiveCamera(52, innerWidth/innerHeight, .1, 100);
+    camera.position.z = 9;
+    world = new THREE.Group();
+    scene.add(world);
+    const icoMat = new THREE.MeshBasicMaterial({color:0x00ffd0, wireframe:true, transparent:true, opacity:mobile?.065:.09});
+    wire = new THREE.Mesh(new THREE.IcosahedronGeometry(2.7,2), icoMat);
+    wire.scale.setScalar(1.15); world.add(wire);
+    const inner = new THREE.Mesh(new THREE.IcosahedronGeometry(1.25,1), new THREE.MeshBasicMaterial({color:0x7dffe8,wireframe:true,transparent:true,opacity:.10}));
+    world.add(inner);
+    rings = [new THREE.Mesh(new THREE.TorusGeometry(3.65,.012,12,160),new THREE.MeshBasicMaterial({color:0x00ffd0,transparent:true,opacity:.16})),new THREE.Mesh(new THREE.TorusGeometry(4.35,.008,12,160),new THREE.MeshBasicMaterial({color:0x00ffd0,transparent:true,opacity:.07}))];
+    rings[0].rotation.x=.9; rings[0].rotation.z=.4; rings[1].rotation.y=.75; world.add(rings[0],rings[1]);
+    particleGeo = new THREE.BufferGeometry();
+    const count = mobile ? 220 : 620; const pos = new Float32Array(count*3);
+    for(let i=0;i<count;i++){ pos[i*3]=(Math.random()-.5)*18; pos[i*3+1]=(Math.random()-.5)*12; pos[i*3+2]=(Math.random()-.5)*12; }
+    particleGeo.setAttribute('position',new THREE.BufferAttribute(pos,3));
+    particles = new THREE.Points(particleGeo,new THREE.PointsMaterial({color:0x00ffd0,size:mobile?.018:.022,transparent:true,opacity:mobile?.17:.26}));
+    scene.add(particles);
+    addEventListener('resize', ()=>{ if(!renderer)return; camera.aspect=innerWidth/innerHeight; camera.updateProjectionMatrix(); renderer.setPixelRatio(Math.min(devicePixelRatio,innerWidth<700?1:1.65)); renderer.setSize(innerWidth,innerHeight,false); });
+    addEventListener('mousemove',e=>{mouseX=(e.clientX-innerWidth/2)/innerWidth;mouseY=(e.clientY-innerHeight/2)/innerHeight});
+    const clock=new THREE.Clock();
+    const animate=()=>{
+      const t=clock.getElapsedTime();
+      wire.rotation.x += .0025; wire.rotation.y += .004;
+      wire.rotation.x += (mouseY*.36-wire.rotation.x)*.014; wire.rotation.y += (mouseX*.5-wire.rotation.y)*.014;
+      inner.rotation.y=-t*.1; inner.rotation.x=t*.07;
+      rings[0].rotation.z=t*.10; rings[1].rotation.z=-t*.055;
+      particles.rotation.y=t*.008; particles.rotation.x=Math.sin(t*.12)*.03;
+      camera.position.x += ((mouseX*.65)-camera.position.x)*.015; camera.position.y += ((-mouseY*.48)-camera.position.y)*.015;
+      renderer.render(scene,camera); requestAnimationFrame(animate);
+    };
+    animate();
+  }
+  if (!reduced) makeWebGL();
+
+  // ---------- Boot animation ----------
+  let booted = false;
+  const boot = () => {
+    if (booted) return;
+    booted = true;
+    try {
+      clearInterval(loadTimer);
+      if (fill) fill.style.width='100%';
+      if (num) num.textContent='100%';
+      if (reduced || !window.gsap) {
+        if (pre) pre.style.display='none';
+        document.body.classList.remove('loading');
+      } else {
+        gsap.timeline({onComplete:()=>{ try { pre.remove(); } catch(e){ if (pre) pre.style.display='none'; } document.body.classList.remove('loading'); }})
+          .to('.preloader__word',{yPercent:-8,opacity:0,duration:.35,ease:'power3.in'})
+          .to(pre,{clipPath:'inset(0 0 100% 0)',duration:.65,ease:'power4.inOut'},'-=.08')
+          .to('.hero__title .line-inner',{yPercent:0,duration:.9,stagger:.08,ease:'power4.out'},'-=.2')
+          .to('.hero .reveal',{opacity:1,y:0,duration:.6,ease:'power3.out'},'-=.5')
+          .to('.hero .reveal-x',{opacity:1,x:0,duration:.6,ease:'power3.out'},'-=.5');
+      }
+    } catch(err) {
+      if (pre) pre.style.display='none';
+      document.body.classList.remove('loading');
+    }
+  };
+  window.addEventListener('load', () => setTimeout(boot, 350));
+  setTimeout(boot, 1500);
+
+  if (reduced) { document.querySelectorAll('.reveal,.reveal-x').forEach(el=>{el.style.opacity=1;el.style.transform='none'}); }
+  else {
+    gsap.utils.toArray('.reveal').forEach(el=>gsap.to(el,{opacity:1,y:0,duration:.85,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%',once:true}}));
+    gsap.utils.toArray('.reveal-x').forEach(el=>gsap.to(el,{opacity:1,x:0,duration:.85,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%',once:true}}));
+  }
+
+  // ---------- Manifesto color progression ----------
+  if (!reduced) {
+    const words = gsap.utils.toArray('.manifesto__word');
+    words.forEach((word,i)=>ScrollTrigger.create({trigger:'.manifesto',start:`top+=${i*7}% top`,end:`top+=${(i+1)*11}% top`,onEnter:()=>word.classList.add('active'),onLeaveBack:()=>word.classList.remove('active')}));
+  } else document.querySelectorAll('.manifesto__word').forEach(x=>x.classList.add('active'));
+
+  // ---------- Ribbon ----------
+  if (!reduced) gsap.to('#skillsTrack',{xPercent:-35,ease:'none',scrollTrigger:{trigger:'.skills-ribbon',start:'top bottom',end:'bottom top',scrub:1}});
+
+  // ---------- Project horizontal cinema ----------
+  const track = document.getElementById('projectTrack');
+  const pin = document.getElementById('projectPin');
+  if (!touch && !reduced && track && pin) {
+    const getDistance=()=>Math.max(0,track.scrollWidth-innerWidth+innerWidth*.08);
+    gsap.to(track,{x:()=>-getDistance(),ease:'none',scrollTrigger:{trigger:pin,start:'top top',end:()=>'+='+getDistance(),scrub:1,pin:true,anticipatePin:1,invalidateOnRefresh:true}});
+  }
+  // Update progress counter max for 7 projects + 8 sections
+  // ---------- Subtle logo glow pulse ----------
+  if (!reduced) {
+    gsap.utils.toArray('.logo-glow').forEach((g,i)=>{
+      gsap.to(g,{scale:1.35,opacity:.6,duration:2.5+i*.3,ease:'sine.inOut',yoyo:true,repeat:-1,delay:i*.4});
+    });
+  }
+
+  // ---------- 3D tilt for project visuals ----------
+  if (!touch && !reduced) document.querySelectorAll('.tilt').forEach(el=>{
+    el.addEventListener('mousemove',e=>{const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;gsap.to(el,{rotateY:x*7,rotateX:-y*5,duration:.45,overwrite:true,ease:'power2.out'})});
+    el.addEventListener('mouseleave',()=>gsap.to(el,{rotateY:0,rotateX:0,duration:.7,ease:'power3.out'}));
+  });
+
+  // ---------- Scroll-driven WebGL depth ----------
+  if (!reduced && wire && camera) {
+    gsap.to(wire.scale,{x:1.8,y:1.8,z:1.8,scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:1}});
+    gsap.to(world.position,{x:2.5,y:.2,scrollTrigger:{trigger:'#about',start:'top bottom',end:'bottom top',scrub:1}});
+    gsap.to(world.rotation,{y:Math.PI*.9,scrollTrigger:{trigger:'#stack',start:'top bottom',end:'bottom top',scrub:1}});
+    gsap.to(world.position,{x:-2.2,y:-.6,scrollTrigger:{trigger:'#work',start:'top bottom',end:'bottom top',scrub:1}});
+    gsap.to(world.position,{x:1.4,y:.8,scrollTrigger:{trigger:'#quality',start:'top bottom',end:'bottom top',scrub:1}});
+    gsap.to(camera,{z:7.2,scrollTrigger:{trigger:'#contact',start:'top bottom',end:'bottom top',scrub:1}});
+  }
+
+  // ---------- Contact orbital detail ----------
+  if (!reduced) gsap.to('.ai-orbit',{rotation:360,duration:30,ease:'none',repeat:-1});
+
+  // ---------- Scroll progress ----------
+  if (!reduced) ScrollTrigger.create({start:0,end:'max',onUpdate:self=>{const p=Math.round(self.progress*100);document.getElementById('progressFill').style.height=Math.max(4,p)+'%';document.getElementById('progressNum').textContent=String(Math.min(8,Math.floor(self.progress*8)+1)).padStart(2,'0')+' / 08';}}); 
+  // ScrollTrigger refresh after load for correct track width
+  window.addEventListener('load',()=>ScrollTrigger.refresh());
+})();
+</script>
+</body>
+</html>
