@@ -244,12 +244,12 @@ Bringing Archer Technologies · February 2024
 
 ## 💼 Experience
 
-### IT Head — SVAR INDIA
+### QA Tester — SVAR INDIA
 **February 2025 – Present · Lucknow**
 
 IT operations, web development, hosting, domain/DNS configuration, SSL implementation, digital infrastructure, recruitment platform support and application testing.
 
-### Web Developer — Codesbizz Information Technology Pvt. Ltd.
+### QA Tester — Codesbizz Information Technology Pvt. Ltd.
 **April 2024 – February 2025 · Lucknow**
 
 Responsive database-driven applications, PHP/MySQL/React.js development, feature implementation, performance optimization, API testing, functional/regression testing and defect management.
